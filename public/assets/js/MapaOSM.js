@@ -5,12 +5,11 @@ function cargarMapa()
 	// Asuncion - Paraguay.
 	var longitud = -57.6309129;
 	var latitud = -25.2961407;
-	var marker_point = null;
+	var marcador = null;
 	var zoom = 12;
 	var minZoom = 6;
 	var maxZoom = 18;
 
-	// Se instancia el objeto mapa.
 	mapa = new L.map('mapa',
     {
         center: [latitud, longitud],
@@ -34,13 +33,13 @@ function cargarMapa()
           'OpenStreetMap Contributors </a> Tiles \u00a9 HOT'
 	}).addTo(mapa);
 	
-    marker_point = new L.marker([latitud, longitud], {
+    marcador = new L.marker([latitud, longitud], {
 		id: 'vendor', 
 	    draggable: 'true'
 	});
-    mapa.addLayer(marker_point);
+    mapa.addLayer(marcador);
 
-    marker_point.on("dragend", function(e) {
+    marcador.on("dragend", function(e) {
         var marker = e.target;
         var position = marker.getLatLng();
         var lat = position.lat;
