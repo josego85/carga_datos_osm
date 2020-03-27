@@ -1553,7 +1553,6 @@ this.L.Control.Geocoder = (function (L) {
       if (this._geocodeMarker) {
         this._map.removeLayer(this._geocodeMarker);
       }
-      console.log("result.center: ", result.center);
 
       this._geocodeMarker = new L.Marker(result.center, {
           draggable: 'true'
