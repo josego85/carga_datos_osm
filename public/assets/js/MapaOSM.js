@@ -72,6 +72,7 @@ function agregarBuscador ()
 	var control_geocoder = L.Control.geocoder(
 	{
 		defaultMarkGeocode: false,
+		position: 'topleft',
 		query: 'Pilar',
 		placeholder: 'Buscar ...',
 		geocoder: geocoder
