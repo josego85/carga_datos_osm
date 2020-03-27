@@ -1,13 +1,15 @@
+var mapa = null;
+var marcador = null;
+
 function cargarMapa()
 {
 	// Asuncion - Paraguay.
-	var mapa = null;
-	var marcador = null;
 	var longitud = -57.6309129;
 	var latitud = -25.2961407;
+
 	var zoom = 10;
 	var minZoom = 6;
-	var maxZoom = 15;
+	var maxZoom = 18;
 
 	mapa = new L.map('mapa',
     {
@@ -54,5 +56,33 @@ function cargarMapa()
 
 		document.getElementById('user_lat').value = lat;
         document.getElementById('user_lng').value = lng;
-    });
+	});
+
+	agregarBuscador();
+}
+
+function agregarBuscador ()
+{
+	var opciones_geocoder = {
+		geocodingQueryParams: {
+			countrycodes: 'PY'
+		}
+	};
+	var geocoder = L.Control.Geocoder.nominatim(opciones_geocoder);
+	var control_geocoder = L.Control.geocoder(
+	{
+		defaultMarkGeocode: false,
+		query: 'Asuncion',
+        placeholder: 'Buscar ...',
+        geocoder: geocoder
+	})
+	  .on('markgeocode', function(e)
+	  {
+			var center = e.geocode.center;
+
+			marcador.setLatLng(center);
+			mapa.setView(center, 18);
+			mapa.panTo(center);
+	  })
+	  .addTo(mapa);
 }

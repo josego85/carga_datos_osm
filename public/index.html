@@ -5,12 +5,14 @@
         <!-- Estilos -->
         <link rel="stylesheet" href="assets/js/libs/leaflet/leaflet.css" charset="utf-8"/>
         <link rel="stylesheet" href="assets/js/libs/leaflet/plugins/Leaflet.fullscreen/leaflet.fullscreen.css" />
+        <link rel="stylesheet" href="assets/js/libs/leaflet/plugins/Leaflet-control-geocoder/Control.Geocoder.css" />
         <link rel="stylesheet" href="assets/js/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="screen" charset="utf-8" />
         <link rel='stylesheet' href='assets/css/styles.css' charset="utf-8"/>
 
         <!-- Archivos JS -->
         <script src="assets/js/libs/leaflet/leaflet.js" type="text/javascript" charset="utf-8"></script>
         <script src="assets/js/libs/leaflet/plugins/Leaflet.fullscreen/Leaflet.fullscreen.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="assets/js/libs/leaflet/plugins/Leaflet-control-geocoder/Control.Geocoder.js"></script>
         <script src="assets/js/libs/jquery/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="assets/js/libs/bootstrap-4.4.1-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="assets/js/MapaOSM.js" type="text/javascript" charset="utf-8"></script>
@@ -45,10 +47,9 @@
                 <div class="form-group">
                     <input class="form-control" type="hidden" name="user_lng" id="user_lng" value="" placeholder="Mover en el mapa"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <div id="mapa" style="width: 800px; height: 400px; border: 1px solid #AAA;">
                 </div>
-                <input class="btn btn-primary" type="submit" name="submit" value="Enviar" />
            </form>
         </div>
     </body>
