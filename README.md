@@ -9,3 +9,4 @@ Tecnologías utilizadas:
 * HTML
 * CSS (Boostrap)
 * JavaScript (Leftlet, JQuery)
+* Buscador Nominatim (OSM)
