@@ -72,17 +72,16 @@ function agregarBuscador ()
 	var control_geocoder = L.Control.geocoder(
 	{
 		defaultMarkGeocode: false,
-		query: 'Asuncion',
-        placeholder: 'Buscar ...',
-        geocoder: geocoder
+		query: 'Pilar',
+		placeholder: 'Buscar ...',
+		geocoder: geocoder
 	})
-	  .on('markgeocode', function(e)
-	  {
-			var center = e.geocode.center;
+	.on('markgeocode', function (e)
+	{
+		var center = e.geocode.center;
 
-			marcador.setLatLng(center);
-			mapa.setView(center, 18);
-			mapa.panTo(center);
-	  })
-	  .addTo(mapa);
+		marcador.setLatLng(center);
+		mapa.setView(center, 18);
+	})
+	.addTo(mapa);
 }
